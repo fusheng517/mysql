@@ -122,12 +122,12 @@ replicate-do-table=db_name.table_name2
 
 
 
-问题：
-Slave_IO_Running: Yes
-Slave_SQL_Running: No
-salve 连接 master 成功，但是 slave 自己的 SQL 功能关闭了，这样是没办法完成主从复制的！
+##问题：
+- Slave_IO_Running: Yes
+- Slave_SQL_Running: No
+- salve 连接 master 成功，但是 slave 自己的 SQL 功能关闭了，这样是没办法完成主从复制的！
 
-解决：
+##解决：
 
 在 master 端：
 执行：show master status;
@@ -136,13 +136,13 @@ salve 连接 master 成功，但是 slave 自己的 SQL 功能关闭了，这样
 
 到slave服务器上执行手动同步
 
-change master to 
-master_host='39.108.225.4',
-master_user='root',
-master_password='saftop9854',
-master_port=3306,
-master_log_file='mysql-bin.000005',
-master_log_pos=298930;
+- change master to 
+- master_host='39.108.225.4',
+- master_user='root',
+- master_password='saftop9854',
+- master_port=3306,
+- master_log_file='mysql-bin.000005',
+- master_log_pos=298930;
 
 
 需关闭slave再重启
